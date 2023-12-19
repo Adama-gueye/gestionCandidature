@@ -1,0 +1,139 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Candidat documentation",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/candidats": {
+            "get": {
+                "tags": [
+                    "Candidats"
+                ],
+                "summary": "Retourne tous les candidats",
+                "operationId": "d09800238d0df4bfd1f76f36f5075dc6",
+                "responses": {
+                    "200": {
+                        "description": "Succès",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "accepter": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Candidat"
+                                            }
+                                        },
+                                        "refuser": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Candidat"
+                                            }
+                                        },
+                                        "candidats": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Candidat"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Candidats"
+                ],
+                "summary": "Enregistre un nouveau candidat",
+                "operationId": "3c888e2b901d28607e6d9ef575c5d2c9",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "niveauEtude": {
+                                        "type": "string"
+                                    },
+                                    "formation_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success"
+                    },
+                    "422": {
+                        "description": "Validation Error"
+                    }
+                }
+            }
+        },
+        "/api/candidats/accepter": {
+            "get": {
+                "tags": [
+                    "Candidats"
+                ],
+                "summary": "Retourne les candidats acceptés",
+                "operationId": "4fcb79916114b63b33e0556384dbc98a",
+                "responses": {
+                    "200": {
+                        "description": "Succès"
+                    }
+                }
+            }
+        },
+        "/api/candidats/refuser": {
+            "get": {
+                "tags": [
+                    "Candidats"
+                ],
+                "summary": "Retourne les candidats refusés",
+                "operationId": "1c610d90dae94970895d37e66f380ed6",
+                "responses": {
+                    "200": {
+                        "description": "Succès"
+                    }
+                }
+            }
+        },
+        "/api/candidats/{id}/changeEtat": {
+            "post": {
+                "tags": [
+                    "Candidats"
+                ],
+                "summary": "Change l'état d'un candidat",
+                "operationId": "a96a87c19a8ffdcdcd21bbec849da831",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID du candidat",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        }
+    }
+}
