@@ -99,7 +99,7 @@ class CandidatController extends Controller
         $candidat->save();
         $candidatForm->save();
 
-        return response()->json("enregistrer avec succès", 201);
+        return response()->json("votre candidature a été soumis avec succès", 201);
     }
 
     /**
@@ -128,7 +128,7 @@ class CandidatController extends Controller
             } else {
                 $candidat->etat = 'accepter';
                 $candidat->save();
-                return response()->json("success", 201);
+                return response()->json("succes", 201);
             }
         } else {
             return response()->json("Candidat non trouvé", 404);

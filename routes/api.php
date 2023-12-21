@@ -37,8 +37,12 @@ Route::group([
 
 });
 
+
+
+
 Route::middleware(['auth:api', 'role:candidat'])->group(function () {
     Route::post('/createCandidat', [CandidatController::class, 'store']);
+    Route::get('/formations', [FormationController::class, 'index']);
 });
 
 Route::middleware(['auth:api', 'role:admin'])->group(function () {
@@ -52,5 +56,4 @@ Route::middleware(['auth:api', 'role:admin'])->group(function () {
     Route::get('/candidatRefuser', [CandidatController::class, 'candidatRefuser']);
     Route::patch('/updateCandidat{id}', [CandidatController::class, 'update']);
     Route::patch('/updateEtat{id}', [CandidatController::class, 'changeEtat']);
-
 });

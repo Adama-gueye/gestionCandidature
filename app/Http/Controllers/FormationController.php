@@ -9,8 +9,8 @@ use OpenApi\Annotations as OA;
 
 /**
  * @OA\Info(
- *      title="Formation documentation", 
- *      version="0.1",
+ *      title="Formation API Documentation", 
+ *      version="0.1"
  * )
  */
 class FormationController extends Controller
@@ -56,6 +56,28 @@ class FormationController extends Controller
      *     @OA\Response(response=422, description="Validation Error")
      * )
      */
+
+     public function rules()
+     {
+         return [
+             'nom' => 'required',
+             'description' => 'required',
+             'duree' => 'required',
+             'etat' => 'required',
+             'date_debut' => 'required',
+         ];
+     }
+     public function messages()
+     {
+         return [
+             'nom.required' => 'Desolé! le champ nom est Obligatoire',
+             'description.required' => 'Desolé! le champ description est Obligatoire',
+             'duree.required' => 'Desolé! le champ duree est Obligatoire',
+             'etat.required' => 'Desolé! le champ etat est Obligatoire',
+             'date_debut.required' => 'Desolé! le champ date debut est obligatoire',
+         ];
+     }
+
     public function store(Request $request)
     {
         try {
