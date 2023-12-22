@@ -41,6 +41,7 @@ class FormationController extends Controller
      * @OA\Post(
      *     path="/api/formations",
      *     summary="Enregistre une nouvelle formation",
+     *     security={"bearerAuth"},
      *     tags={"Formations"},
      *     @OA\RequestBody(
      *         required=true,
@@ -103,6 +104,7 @@ class FormationController extends Controller
      *     path="/api/formations/{id}",
      *     summary="Retourne une formation spécifique",
      *     tags={"Formations"},
+     *     security={"bearerAuth"},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
@@ -128,6 +130,7 @@ class FormationController extends Controller
      * @OA\Put(
      *     path="/api/formations/{id}",
      *     summary="Modifie une formation existante",
+     *     security={"bearerAuth"},
      *     tags={"Formations"},
      *     @OA\Parameter(
      *         name="id",
@@ -175,6 +178,7 @@ class FormationController extends Controller
      *     path="/api/formations/{id}",
      *     summary="Supprime une formation existante",
      *     tags={"Formations"},
+     *     security={"bearerAuth"},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",

@@ -39,14 +39,13 @@ Route::group([
 
 
 
+Route::get('/formations', [FormationController::class, 'index']);
 
 Route::middleware(['auth:api', 'role:candidat'])->group(function () {
     Route::post('/createCandidat', [CandidatController::class, 'store']);
-    Route::get('/formations', [FormationController::class, 'index']);
 });
 
 Route::middleware(['auth:api', 'role:admin'])->group(function () {
-    Route::get('/formations', [FormationController::class, 'index']);
     Route::post('/createFormation', [FormationController::class, 'store']);
     Route::patch('/updateFormation{id}', [FormationController::class, 'update']);
     Route::delete('/deleteFormation{id}', [FormationController::class, 'destroy']);

@@ -22,6 +22,7 @@ class CandidatController extends Controller
      *     path="/api/candidats",
      *     summary="Retourne tous les candidats",
      *     tags={"Candidats"},
+     * security={"bearerAuth"},
      *     @OA\Response(
      *         response=200,
      *         description="Succès",
@@ -47,6 +48,7 @@ class CandidatController extends Controller
      *     path="/api/candidats/accepter",
      *     summary="Retourne les candidats acceptés",
      *     tags={"Candidats"},
+     * security={"bearerAuth"},
      *     @OA\Response(response=200, description="Succès")
      * )
      */
@@ -61,6 +63,7 @@ class CandidatController extends Controller
      *     path="/api/candidats/refuser",
      *     summary="Retourne les candidats refusés",
      *     tags={"Candidats"},
+     * security={"bearerAuth"},
      *     @OA\Response(response=200, description="Succès")
      * )
      */
@@ -75,6 +78,7 @@ class CandidatController extends Controller
      *     path="/api/candidats",
      *     summary="Enregistre un nouveau candidat",
      *     tags={"Candidats"},
+     * security={"bearerAuth"},
      *     @OA\RequestBody(
      *         required=true,
      *         @OA\JsonContent(
@@ -107,6 +111,7 @@ class CandidatController extends Controller
      *     path="/api/candidats/{id}/changeEtat",
      *     summary="Change l'état d'un candidat",
      *     tags={"Candidats"},
+     * security={"bearerAuth"},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",

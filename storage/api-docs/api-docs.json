@@ -287,7 +287,12 @@
                             }
                         }
                     }
-                }
+                },
+                "security": [
+                    {
+                        "scalar": "bearerAuth"
+                    }
+                ]
             },
             "post": {
                 "tags": [
@@ -320,7 +325,12 @@
                     "422": {
                         "description": "Validation Error"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "scalar": "bearerAuth"
+                    }
+                ]
             }
         },
         "/api/candidats/accepter": {
@@ -334,7 +344,12 @@
                     "200": {
                         "description": "Succès"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "scalar": "bearerAuth"
+                    }
+                ]
             }
         },
         "/api/candidats/refuser": {
@@ -348,7 +363,12 @@
                     "200": {
                         "description": "Succès"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "scalar": "bearerAuth"
+                    }
+                ]
             }
         },
         "/api/candidats/{id}/changeEtat": {
@@ -376,7 +396,12 @@
                     "404": {
                         "description": "Not Found"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "scalar": "bearerAuth"
+                    }
+                ]
             }
         },
         "/api/register": {
@@ -518,7 +543,12 @@
                     "422": {
                         "description": "Validation Error"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "scalar": "bearerAuth"
+                    }
+                ]
             }
         },
         "/api/formations/{id}": {
@@ -546,7 +576,12 @@
                     "404": {
                         "description": "Not Found"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "scalar": "bearerAuth"
+                    }
+                ]
             },
             "put": {
                 "tags": [
@@ -602,7 +637,12 @@
                     "422": {
                         "description": "Validation Error"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "scalar": "bearerAuth"
+                    }
+                ]
             },
             "delete": {
                 "tags": [
@@ -628,7 +668,12 @@
                     "404": {
                         "description": "Not Found"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "scalar": "bearerAuth"
+                    }
+                ]
             }
         }
     },
